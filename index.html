@@ -23,10 +23,11 @@
         <div class="form">
             
                 <input type="text" id="guess" placeholder="Type your guess here">
-                <button type="submit" id="submit" onclick="getGuess()">Guess the pokemon!</button>
+                
             
             <div class="gameControls">
-                <button onclick="fetchData()">Try a new pokemon</button>
+                <button type="submit" id="submit" class="btn" onclick="getGuess()">Guess the pokemon!</button>
+                <button onclick="fetchData()" class="btn">Try a new pokemon</button>
             </div>
         </div>
         <!-- displat the results and score -->

@@ -51,6 +51,7 @@ function getGuess() {
         resultHeader.style.display = "block";
         resultBody.style.display = "block";
         scoreboard.style.display = "block";
+        fetchData();
     }
     else {
         resultHeader.textContent = "Oh no! You were wrong!";

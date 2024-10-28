@@ -1,7 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Press+Start+2P&display=swap');
 
-
 :root{
     --bg-main: #99ee95;
     --ft-main: #0b1157;
@@ -23,3 +22,23 @@ img{
     height: 200px;
     width: 200px;
 }
+.btn{
+    background-color: var(--ft-main);
+    color: var(--bg-main);
+    margin: 10px;
+}
+#guess{
+    width: 515px;
+    text-align: center;
+}
+@media only screen and (max-width: 600px) {
+    h1, h3{
+        display: none;
+    }
+    .gameContainer{
+        margin-top: 50px;
+    }
+    #guess{
+        width: auto;
+    }
+  }
