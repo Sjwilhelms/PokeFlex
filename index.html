@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeFlex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="gameContainer">
+        <!-- this is the title and instruction -->
+        <div class="gameBanner">
+            <h1>Guess the pokemon game!</h1>
+            <h3>Can you guess the pokemon?</h3>
+        </div>
+        <!-- the sprite of pokemon displays here -->
+        <div class="gameArea">
+                <img src="" alt="Pokemon Sprite - Rear View" id="pokemonSprite" style="display: none">
+        </div>
+        <!-- user inputs and submits guess. Try a new pokemon option -->
+        <div class="form">
+            
+                <input type="text" id="guess" placeholder="Type your guess here">
+                <button type="submit" id="submit" onclick="getGuess()">Guess the pokemon!</button>
+            
+            <div class="gameControls">
+                <button onclick="fetchData()">Try a new pokemon</button>
+            </div>
+        </div>
+        <!-- displat the results and score -->
+        <div class="resultArea">
+            <h2 id="resultHeader" style="display: none">YAY! You were right!</h2>
+            <p id="resultBody" style="display: none">The correct answer was Pikachu!</p>
+            <p id="scoreboard" style="display: none">You've got 0 answers correct!</p>
+        </div>
+        
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
