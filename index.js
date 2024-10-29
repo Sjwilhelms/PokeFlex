@@ -35,13 +35,18 @@ async function fetchData() {
         console.error(error);
     }
 }
-
+// add event listener for enter key to  submit form
+document.addEventListener("keydown", event => {
+    if(event.key.startsWith("Enter")){
+        getGuess();
+    }
+})
 /** get the user guess and compare with the results from the data */
 function getGuess() {
 
     guess = document.getElementById("guess").value;
     scoreboard = document.getElementById("scoreboard");
-    
+
     // compare the guess to the data and get feedback
     if (guess === pokemonName) {
         score++;
