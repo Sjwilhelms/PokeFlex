@@ -56,14 +56,15 @@ function getGuess() {
     // compare the guess to the data and get feedback
     if (guess === pokemonName) {
         score++;
-        
         resultHeader.textContent = "Yay! You were right";
         resultBody.textContent = `The correct answer was ${formattedName}`;
         scoreboard.textContent = `You've guessed correctly ${score} times`;
         resultHeader.style.display = "block";
         resultBody.style.display = "block";
         scoreboard.style.display = "block";
-        fetchData();
+        document.getElementById("guess").value = "";
+        document.getElementById("submit").style.display = "none";
+
     }
     else {
         if (attempts <= 1) {
@@ -72,6 +73,7 @@ function getGuess() {
             scoreboard.textContent = `You have one more chance!`;
             resultHeader.style.display = "block";
             resultBody.style.display = "block";
+
         }
         else {
             resultHeader.textContent = "Oh no! You were wrong!";
