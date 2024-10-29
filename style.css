@@ -30,6 +30,7 @@ img{
 #guess{
     width: 515px;
     text-align: center;
+    margin: 10px;
 }
 @media only screen and (max-width: 600px) {
     h1, h3{
