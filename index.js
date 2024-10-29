@@ -1,4 +1,7 @@
+
+
 score = 0;
+
 
 // call the function when the page loads 
 fetchData();
@@ -11,6 +14,7 @@ async function fetchData() {
         resultBody = document.getElementById("resultBody");
         resultHeader.style.display = "none";
         resultBody.style.display = "none";
+        attempts = 0;
 
         // generate a random number to select the pokemon
         let randomIndex = Math.floor(Math.random() * 150) + 1;
@@ -23,6 +27,7 @@ async function fetchData() {
         const pokemonSprite = data.sprites.front_default;
         pokemonName = data.name;
         formattedName = data.name.charAt(0).toUpperCase() + data.name.slice(1);
+        clueCharacter = formattedName.charAt(0);
         console.log(pokemonName);
 
         // display the sprite
@@ -37,7 +42,7 @@ async function fetchData() {
 }
 // add event listener for enter key to  submit form
 document.addEventListener("keydown", event => {
-    if(event.key.startsWith("Enter")){
+    if (event.key.startsWith("Enter")) {
         getGuess();
     }
 })
@@ -45,11 +50,14 @@ document.addEventListener("keydown", event => {
 function getGuess() {
 
     guess = document.getElementById("guess").value;
+    guess = "";
     scoreboard = document.getElementById("scoreboard");
+    attempts++;
 
     // compare the guess to the data and get feedback
     if (guess === pokemonName) {
         score++;
+        
         resultHeader.textContent = "Yay! You were right";
         resultBody.textContent = `The correct answer was ${formattedName}`;
         scoreboard.textContent = `You've guessed correctly ${score} times`;
@@ -59,11 +67,22 @@ function getGuess() {
         fetchData();
     }
     else {
-        resultHeader.textContent = "Oh no! You were wrong!";
-        resultBody.textContent = `The correct answer was ${formattedName}`;
-        scoreboard.textContent = `You've guessed correctly ${score} times`;
-        resultHeader.style.display = "block";
-        resultBody.style.display = "block";
-        scoreboard.style.display = "block";
+        if (attempts <= 1) {
+            resultHeader.textContent = "Oh no! You were wrong!";
+            resultBody.textContent = `The correct answer begins with ${clueCharacter}`;
+            scoreboard.textContent = `You have one more chance!`;
+            resultHeader.style.display = "block";
+            resultBody.style.display = "block";
+        }
+        else {
+            resultHeader.textContent = "Oh no! You were wrong!";
+            resultBody.textContent = `The correct answer was ${formattedName}`;
+            scoreboard.textContent = `You've guessed correctly ${score} times`;
+            resultHeader.style.display = "block";
+            resultBody.style.display = "block";
+            scoreboard.style.display = "block";
+            
+        }
     }
 }
+fetchData();
