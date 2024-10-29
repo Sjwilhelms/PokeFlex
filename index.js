@@ -12,6 +12,7 @@ async function fetchData() {
         // ensures each new game starts without a result element showing
         resultHeader = document.getElementById("resultHeader");
         resultBody = document.getElementById("resultBody");
+        document.getElementById("submit").style.display = "inline-block";
         resultHeader.style.display = "none";
         resultBody.style.display = "none";
         attempts = 0;
