@@ -50,7 +50,6 @@ document.addEventListener("keydown", event => {
 function getGuess() {
 
     guess = document.getElementById("guess").value;
-    guess = "";
     scoreboard = document.getElementById("scoreboard");
     attempts++;
 
@@ -81,8 +80,8 @@ function getGuess() {
             resultHeader.style.display = "block";
             resultBody.style.display = "block";
             scoreboard.style.display = "block";
-            
+            document.getElementById("guess").value = "";
+            document.getElementById("submit").style.display = "none";
         }
     }
 }
-fetchData();
