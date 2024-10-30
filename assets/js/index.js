@@ -47,6 +47,11 @@ document.addEventListener("keydown", event => {
         getGuess();
     }
 })
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("ArrowRight")) {
+        fetchData();
+    }
+})
 /** get the user guess and compare with the results from the data */
 function getGuess() {
 
