@@ -55,7 +55,7 @@ function getGuess() {
     attempts++;
 
     // compare the guess to the data and get feedback
-    if (guess == pokemonName || formattedName) {
+    if (guess === pokemonName || guess === formattedName) {
         score++;
         resultHeader.textContent = "Yay! You were right";
         resultBody.textContent = `The correct answer was ${formattedName}`;
