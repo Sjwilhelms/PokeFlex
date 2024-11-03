@@ -5,7 +5,7 @@
     --bg-main: #99ee95;
     --ft-main: #0b1157;
 }
-*{
+body{
     font-family: "Press Start 2P";
     color: var(--ft-main);
     background-color: var(--bg-main);
