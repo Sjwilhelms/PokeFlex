@@ -2,7 +2,7 @@
 
 ## Version 1 MVP
 
-Flex your pokemon knowledge with this guessing game. 
+### Flex your pokemon knowledge with this guessing game. 
 
 Fetch a sprite and a name from the pokeApi by index, using Math.random  
 
@@ -17,24 +17,35 @@ There are keyboard controls, cursor autofocus, a score count, and an attempt cou
 Correct answer logs to the console for testing purposes and as a developer easter egg  
 
 
-## Version 1 User Feedback
+### Version 1 User Feedback
 
-User feedback indicates that correct answer formatting on certain pokemon is unintuitive(eg. "mr-mime", "nidoran-m")
-User feedback indicates that the clearing user input after each guess would be convenient
-One user did not realise the keyboard controls were in place
-On small screens there is unintended zoom which needs investigating
-On small screens the title and subtitle are set to hide which might remove some meaning when landing
-There is no credits or link to GitHub or readMe for code accountability
-There is no victory conditions, no reward, and no feedback (There is poke but there is no flex)
+User feedback indicates that correct answer formatting on certain pokemon is unintuitive(eg. "mr-mime", "nidoran-m")  
 
-## Version 2 WIP
+User feedback indicates that the clearing user input after each guess would be convenient  
 
-Multiple choice format to resolve user input and answer format problemsadd context and reduce overall visual clutter
-MOBILE STYLING, MOBILE FIRST,
-Develop an end game, using time and final score. A certain score unlocks a poke reward 
-Credits section upon the end of the game
+One user did not realise the keyboard controls were in place  
 
-## User stories - Must have
+On small screens there is unintended zoom which needs investigating  
+
+On small screens the title and subtitle are set to hide which might remove some meaning when landing  
+
+There is no credits or link to GitHub or readMe for code accountability  
+
+There is no victory conditions, no reward, and no feedback (There is poke but there is no flex)  
+
+
+### Version 2 WIP
+
+Multiple choice format to resolve user input and answer format problemsadd context and reduce overall visual clutter  
+
+MOBILE STYLING, MOBILE FIRST  
+
+Develop an end game, using time and final score. A certain score unlocks a poke reward   
+
+Credits section upon the end of the game  
+
+
+## User stories - Must have(TBC)
 
 ## Credits
 
