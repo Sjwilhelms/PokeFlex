@@ -15,7 +15,7 @@
         <h3>Can you guess the Pokemon?</h3>
         <p>Press Enter to input your guess</p>
         <p>Press Right Arrow to get a new Pokemon</p>
-        <p>Press Down Arrow to clear the user input</p>
+        <p>Press Left Arrow to clear the user input</p>
         <p>Are you ready to start catching Pokemon?</p>
         <button id="start" class="btn" onclick="start()">Let's Go!</button>
     </div>
@@ -29,9 +29,9 @@
         <div class="form">
             <input type="text" id="guess" placeholder="Type your guess now!" autofocus autocomplete="off">
             <div class="gameControls">
-                <button type="submit" id="submit" class="btn" onclick="getGuess()">Guess the pokemon!</button>
-                <button onclick="fetchData()" class="btn">Try a new pokemon</button>
-                <button onclick="clearGuess()" class="btn">Clear the input</button>
+                <button type="submit" id="submit" class="btn" onclick="getGuess()">Guess the pokemon! (Enter)</button>
+                <button onclick="fetchData()" class="btn">Try a new pokemon (>)</button>
+                <button onclick="clearGuess()" class="btn">Clear the input (<)</button>
             </div>
         </div>
         <!-- displat the results and score -->

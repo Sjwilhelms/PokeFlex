@@ -2,12 +2,14 @@
 // const start = document.getElementById("start");
 const gameBanner = document.getElementById("gameBanner");
 const gameContainer = document.getElementById("gameContainer");
+
 score = 0;
 
 /** start the game, close the introduction and fetch a pokemon */
 function start() {
     gameBanner.classList.add("hide");
     gameContainer.classList.remove("hide");
+    document.getElementById("guess").focus();
 }
 // call the function when the page loads
 fetchData();
@@ -60,7 +62,7 @@ document.addEventListener("keydown", event => {
 })
 // add event listener for left arrow key to clear the text input
 document.addEventListener("keydown", event => {
-    if (event.key.startsWith("ArrowDown")) {
+    if (event.key.startsWith("ArrowLeft")) {
         clearGuess();
     }
 })
@@ -70,7 +72,7 @@ function clearGuess(){
 /** get the user guess and compare with the results from the data */
 function getGuess() {
 
-    guess = document.getElementById("guess").value;
+    let guess = document.getElementById("guess").value;
     scoreboard = document.getElementById("scoreboard");
     attempts++;
 
