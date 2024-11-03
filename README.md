@@ -4,12 +4,18 @@
 
 Flex your pokemon knowledge with this guessing game. 
 
-Fetch a sprite and a name from the pokeApi by index, using Math.random
-Take user input and compare with the correct name
-If correct the user get a nice message and a new pokemon is fetched 
-If incorrect the user gets a clue and another attempt
-There are keyboard controls, cursor autofocus, a score count, and an attempt count
-Correct answer logs to the console for testing purposes and as a developer easter egg
+Fetch a sprite and a name from the pokeApi by index, using Math.random  
+
+Take user input and compare with the correct name  
+
+If correct the user get a nice message and a new pokemon is fetched   
+
+If incorrect the user gets a clue and another attempt  
+
+There are keyboard controls, cursor autofocus, a score count, and an attempt count  
+
+Correct answer logs to the console for testing purposes and as a developer easter egg  
+
 
 ## Version 1 User Feedback
 
