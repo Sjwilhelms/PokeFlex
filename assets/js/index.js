@@ -88,6 +88,7 @@ function getGuess() {
         scoreboard.style.display = "block";
         document.getElementById("guess").value = "";
         document.getElementById("submit").style.display = "none";
+        document.getElementById("guess").focus();
 
     }
     else {
@@ -97,6 +98,7 @@ function getGuess() {
             scoreboard.textContent = `You have one more chance!`;
             resultHeader.style.display = "block";
             resultBody.style.display = "block";
+            document.getElementById("guess").focus();
 
         }
         else {
@@ -108,6 +110,7 @@ function getGuess() {
             scoreboard.style.display = "block";
             document.getElementById("guess").value = "";
             document.getElementById("submit").style.display = "none";
+            document.getElementById("guess").focus();
         }
     }
 }
