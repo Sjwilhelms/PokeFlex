@@ -1,20 +1,63 @@
 
-// const start = document.getElementById("start");
-const gameBanner = document.getElementById("gameBanner");
+const gameIntro = document.getElementById("gameIntro");
 const gameContainer = document.getElementById("gameContainer");
+const timeDisplay = document.getElementById("timeDisplay");
+let playing = false;
+let score = 0;
+let timeLeft = 60;
+let timerInterval;
 
-score = 0;
 
 /** start the game, close the introduction and fetch a pokemon */
 function start() {
-    gameBanner.classList.add("hide");
+    playing = true;
+    score = 0;
+    timeLeft = 60;
+    gameIntro.classList.add("hide");
     gameContainer.classList.remove("hide");
     document.getElementById("guess").focus();
+    // get the pokemon data when the game starts
+    fetchData();
+    startTimer();
+}
+/** timer function */
+function startTimer(){
+    timeDisplay.textContent = `You've got ${timeLeft} seconds left!`;
+    timeDisplay.style.display = "block"
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timeDisplay.textContent = `You've got ${timeLeft} seconds left!`;
+        if(timeLeft <= 0){
+            end();
+        }
+    }, 1000)
+}
+/** end the game and publish the results */
+function end(){
+    playing = false;
+    clearInterval(timerInterval);
+    gameContainer.classList.add("hide");
+    gameIntro.classList.remove("hide");
+    if(score >= 10){
+        gameIntro.innerHTML = `
+        <h3>Well done!</h3>
+        <p id="analysis">You got ${score} pokemon correct in 60 seconds</p>
+        <p><a href="https://github.com/Sjwilhelms" target="_blank">Find me on Github</a></p>
+        <p id="reward"><a href="https://www.youtube.com/watch?v=xMk8wuw7nek" target="_blank">You've earned a poke-reward...</a></p>
+        <button id="playAgain" class="btn" onclick="start()">Let's Go!</button>
+        
+    `}
+    else{
+        gameIntro.innerHTML = `
+        <h3>That's too bad!</h3>
+        <p id="analysis">You got ${score} pokemon correct in 60 seconds</p>
+        <p><a href="https://github.com/Sjwilhelms" target="_blank">Find me on Github</a></p>
+        <p id="reward">No poke-reward for you this time...</p>
+        <button id="playAgain" class="btn" onclick="start()">Let's Go!</button>
+    `}
 }
 
-// call the function when the page loads
-
-fetchData();
 /** function to get the pokemon data from pokeAPI. Use a random number to generate an index for the apiCall to load a random pokemon */
 
 async function fetchData() {
@@ -59,30 +102,24 @@ async function fetchData() {
     }
 }
 
-// add event listener for enter key to  submit form
+// add logic for keyboard controls
 
 document.addEventListener("keydown", event => {
     if (event.key.startsWith("Enter")) {
         getGuess();
     }
 })
-
-// add event listener for right arrow key to fetch a new pokemon
-
 document.addEventListener("keydown", event => {
     if (event.key.startsWith("ArrowRight")) {
         fetchData();
     }
 })
-
-// add event listener for left arrow key to clear the text input
-
 document.addEventListener("keydown", event => {
     if (event.key.startsWith("ArrowLeft")) {
         clearGuess();
     }
 })
-function clearGuess(){
+function clearGuess() {
     document.getElementById("guess").value = "";
 }
 
@@ -96,7 +133,7 @@ function getGuess() {
 
 
     // compare the guess to the data and get feedback
-    
+
     if (guess === pokemonName || guess === formattedName) {
         score++;
         resultHeader.textContent = "Yay! You were right";
@@ -108,6 +145,7 @@ function getGuess() {
         document.getElementById("guess").value = "";
         document.getElementById("submit").style.display = "none";
         document.getElementById("guess").focus();
+        setTimeout(fetchData(), 1000)
 
     }
     else {

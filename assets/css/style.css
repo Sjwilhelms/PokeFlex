@@ -15,7 +15,7 @@
     display: none !important;
 }
 
-#gameContainer, #gameBanner{
+#gameContainer, #gameIntro, #gameOutro{
     display: flex;
     flex-direction: column;
     align-items: center;

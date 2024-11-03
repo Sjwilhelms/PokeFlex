@@ -10,7 +10,7 @@
 
 <body>
     <!-- this is the title and instruction -->
-    <div id="gameBanner">
+    <div id="gameIntro">
         <h1>Guess the Pokemon game!</h1>
         <h3>Can you guess the Pokemon?</h3>
         <p>Press Enter to input your guess</p>
@@ -39,7 +39,16 @@
             <h2 id="resultHeader" style="display: none">YAY! You were right!</h2>
             <p id="resultBody" style="display: none">The correct answer was Pikachu!</p>
             <p id="scoreboard" style="display: none">You've got 0 answers correct!</p>
+            <p id="timeDisplay" style="display: none">You've got 60 seconds left!</p>
         </div>
+    </div>
+    <!-- game over/credits -->
+    <div id="gameOutro" class="hide">
+        <h3 id="assessment">Well done!</h3>
+        <p id="analysis">You got 10 pokemon correct in 60 seconds</p>
+        <p><a href="https://github.com/Sjwilhelms">Find me on Github</a></p>
+        <p id="reward"><a href="https://www.youtube.com/watch?v=xMk8wuw7nek">You've earned a poke-reward...</a></p>
+        <button id="playAgain" class="btn" onclick="start()">Let's Go!</button>
     </div>
     <script src="assets/js/index.js"></script>
 </body>
