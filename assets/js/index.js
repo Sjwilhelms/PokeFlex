@@ -11,12 +11,17 @@ function start() {
     gameContainer.classList.remove("hide");
     document.getElementById("guess").focus();
 }
+
 // call the function when the page loads
+
 fetchData();
 /** function to get the pokemon data from pokeAPI. Use a random number to generate an index for the apiCall to load a random pokemon */
+
 async function fetchData() {
     try {
+
         // ensures each new game starts without a result element showing
+
         resultHeader = document.getElementById("resultHeader");
         resultBody = document.getElementById("resultBody");
         document.getElementById("submit").style.display = "inline-block";
@@ -25,9 +30,12 @@ async function fetchData() {
         attempts = 0;
 
         // generate a random number to select the pokemon
+
         let randomIndex = Math.floor(Math.random() * 150) + 1;
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomIndex}`);
+
         // get the data
+
         if (!response.ok) {
             throw new Error("Pokemon failed to load");
         }
@@ -39,28 +47,36 @@ async function fetchData() {
         console.log(pokemonName);
 
         // display the sprite
+
         const imgElement = document.getElementById("pokemonSprite");
         imgElement.src = pokemonSprite;
         imgElement.style.display = "block";
     }
     // catch any errors
+
     catch (error) {
         console.error(error);
     }
 }
+
 // add event listener for enter key to  submit form
+
 document.addEventListener("keydown", event => {
     if (event.key.startsWith("Enter")) {
         getGuess();
     }
 })
+
 // add event listener for right arrow key to fetch a new pokemon
+
 document.addEventListener("keydown", event => {
     if (event.key.startsWith("ArrowRight")) {
         fetchData();
     }
 })
+
 // add event listener for left arrow key to clear the text input
+
 document.addEventListener("keydown", event => {
     if (event.key.startsWith("ArrowLeft")) {
         clearGuess();
@@ -69,7 +85,9 @@ document.addEventListener("keydown", event => {
 function clearGuess(){
     document.getElementById("guess").value = "";
 }
+
 /** get the user guess and compare with the results from the data */
+
 function getGuess() {
 
     let guess = document.getElementById("guess").value;
@@ -78,6 +96,7 @@ function getGuess() {
 
 
     // compare the guess to the data and get feedback
+    
     if (guess === pokemonName || guess === formattedName) {
         score++;
         resultHeader.textContent = "Yay! You were right";

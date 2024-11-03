@@ -49,6 +49,8 @@ Credits section upon the end of the game
 
 ## Credits
 
+[coolers.co](https://coolors.co/99ee95-0b1157)
+
 Inspired by the Bro Code's tutorial on asynchronous fetch
 
 https://www.youtube.com/watch?v=JVQNywo4AbU
