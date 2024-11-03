@@ -9,27 +9,29 @@
 </head>
 
 <body>
-    <div class="gameContainer">
-        <!-- this is the title and instruction -->
-        <div class="gameBanner">
-            <h1>Guess the Pokemon game!</h1>
-            <h3>Can you guess the Pokemon?</h3>
-            <p>Press Enter to input your guess</p>
-            <p>Press Right Arrow to get a new Pokemon</p>
-        </div>
+    <!-- this is the title and instruction -->
+    <div id="gameBanner">
+        <h1>Guess the Pokemon game!</h1>
+        <h3>Can you guess the Pokemon?</h3>
+        <p>Press Enter to input your guess</p>
+        <p>Press Right Arrow to get a new Pokemon</p>
+        <p>Press Down Arrow to clear the user input</p>
+        <p>Are you ready to start catching Pokemon?</p>
+        <button id="start" class="btn" onclick="start()">Let's Go!</button>
+    </div>
+    <!-- this is the game area -->
+    <div id="gameContainer" class="hide">
         <!-- the sprite of pokemon displays here -->
-        <div class="gameArea">
-                <img src="" alt="Pokemon Sprite - Rear View" id="pokemonSprite" style="display: none">
+        <div class="spriteArea">
+            <img src="" alt="Pokemon Sprite - Rear View" id="pokemonSprite" style="display: none">
         </div>
         <!-- user inputs and submits guess. Try a new pokemon option -->
         <div class="form">
-            
-                <input type="text" id="guess" placeholder="Type your guess now!" autofocus autocomplete="off">
-                
-            
+            <input type="text" id="guess" placeholder="Type your guess now!" autofocus autocomplete="off">
             <div class="gameControls">
                 <button type="submit" id="submit" class="btn" onclick="getGuess()">Guess the pokemon!</button>
                 <button onclick="fetchData()" class="btn">Try a new pokemon</button>
+                <button onclick="clearGuess()" class="btn">Clear the input</button>
             </div>
         </div>
         <!-- displat the results and score -->
@@ -38,7 +40,6 @@
             <p id="resultBody" style="display: none">The correct answer was Pikachu!</p>
             <p id="scoreboard" style="display: none">You've got 0 answers correct!</p>
         </div>
-        
     </div>
     <script src="assets/js/index.js"></script>
 </body>

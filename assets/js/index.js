@@ -1,11 +1,16 @@
 
-
+// const start = document.getElementById("start");
+const gameBanner = document.getElementById("gameBanner");
+const gameContainer = document.getElementById("gameContainer");
 score = 0;
 
-
-// call the function when the page loads 
+/** start the game, close the introduction and fetch a pokemon */
+function start() {
+    gameBanner.classList.add("hide");
+    gameContainer.classList.remove("hide");
+}
+// call the function when the page loads
 fetchData();
-
 /** function to get the pokemon data from pokeAPI. Use a random number to generate an index for the apiCall to load a random pokemon */
 async function fetchData() {
     try {
@@ -47,17 +52,28 @@ document.addEventListener("keydown", event => {
         getGuess();
     }
 })
+// add event listener for right arrow key to fetch a new pokemon
 document.addEventListener("keydown", event => {
     if (event.key.startsWith("ArrowRight")) {
         fetchData();
     }
 })
+// add event listener for left arrow key to clear the text input
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("ArrowDown")) {
+        clearGuess();
+    }
+})
+function clearGuess(){
+    document.getElementById("guess").value = "";
+}
 /** get the user guess and compare with the results from the data */
 function getGuess() {
 
     guess = document.getElementById("guess").value;
     scoreboard = document.getElementById("scoreboard");
     attempts++;
+
 
     // compare the guess to the data and get feedback
     if (guess === pokemonName || guess === formattedName) {
