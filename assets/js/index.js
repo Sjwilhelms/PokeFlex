@@ -1,25 +1,6 @@
-// add logic for keyboard controls
 
-document.addEventListener("keydown", event => {
-    if (event.key.startsWith("Enter")) {
-        getGuess();
-    }
-})
-document.addEventListener("keydown", event => {
-    if (event.key.startsWith("ArrowRight")) {
-        fetchData();
-    }
-})
-document.addEventListener("keydown", event => {
-    if (event.key.startsWith("ArrowLeft")) {
-        clearGuess();
-    }
-})
-function clearGuess() {
-    document.getElementById("guess").value = "";
-}
 
-let randomIndex = Math.floor(Math.random() * 150) + 1;
+
 let wrongAnswer;
 let nameData = [];
 let wrongAnswersList = [];
@@ -31,7 +12,7 @@ let score = 0;
 let timeLeft = 60;
 let timerInterval;
 
-fetchWrong();
+
 
 /** start the game, close the introduction and fetch a pokemon */
 function start() {
@@ -84,26 +65,41 @@ function end() {
 }
 
 /** function to get the incorrect answers from pokeApi */
+let cachedData = null;
 
 async function fetchWrong() {
     try {
-        // APi call to fetch 150 pokemon for wrong answers
+        if (cachedData){
+            console.log("Using cached data:", cachedData.results);
+            return cachedData.results;
+        }
+        // fetch data from api if not cached
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=150&offset=0`);
-
+        // check that the response is ok
         if (!response.ok) {
             throw new Error("Failed to fetch wrong answers");
         }
-        nameData = await response.json();
-        for (let i = 0; i < 3; i++) {
-            const randomName = Math.floor(Math.random() * nameData.results.length);
-            wrongAnswersList.push(nameData.results[randomName].name);
-        }
-        console.log(wrongAnswersList);
+       // parse and store data 
+        cachedData = await response.json();
+        
+        // save data to local storage for future use
+        localStorage.setItem("pokemonData", JSON.stringify(cachedData));
+
+        console.log("Fetched data from API:", cachedData.results);
+        return cachedData.results;
     }
     catch (error) {
-        console.error(error);
+        console.error("Error fetching data:", error);
     }
 }
+
+async function testFetchWrong() {
+    const data = await fetchWrong();
+    console.log("Tested data:", data); // Access the fetched Pokemon data here
+}
+
+testFetchWrong();
+
 
 /** function to get the pokemon data from pokeAPI. Use a random number to generate an index for the apiCall to load a random pokemon */
 
@@ -121,7 +117,7 @@ async function fetchData() {
 
         // generate a random number to select the pokemon
 
-
+        let randomIndex = Math.floor(Math.random() * 150) + 1;
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomIndex}`);
 
         // get the data
@@ -147,6 +143,27 @@ async function fetchData() {
     catch (error) {
         console.error(error);
     }
+}
+
+// add logic for keyboard controls
+
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("Enter")) {
+        getGuess();
+    }
+})
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("ArrowRight")) {
+        fetchData();
+    }
+})
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("ArrowLeft")) {
+        clearGuess();
+    }
+})
+function clearGuess() {
+    document.getElementById("guess").value = "";
 }
 
 /** get the user guess and compare with the results from the data */
