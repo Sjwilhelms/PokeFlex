@@ -1,6 +1,4 @@
 
-
-
 let wrongAnswer;
 let nameData = [];
 let wrongAnswersList = [];
