@@ -1,3 +1,24 @@
+// add logic for keyboard controls
+
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("Enter")) {
+        getGuess();
+    }
+})
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("ArrowRight")) {
+        fetchData();
+    }
+})
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("ArrowLeft")) {
+        clearGuess();
+    }
+})
+function clearGuess() {
+    document.getElementById("guess").value = "";
+}
+
 let randomIndex = Math.floor(Math.random() * 150) + 1;
 let wrongAnswer;
 let nameData = [];
@@ -84,10 +105,6 @@ async function fetchWrong() {
     }
 }
 
-/** function to put three wrong answers from nameData into a list */
-
-
-
 /** function to get the pokemon data from pokeAPI. Use a random number to generate an index for the apiCall to load a random pokemon */
 
 async function fetchData() {
@@ -130,27 +147,6 @@ async function fetchData() {
     catch (error) {
         console.error(error);
     }
-}
-
-// add logic for keyboard controls
-
-document.addEventListener("keydown", event => {
-    if (event.key.startsWith("Enter")) {
-        getGuess();
-    }
-})
-document.addEventListener("keydown", event => {
-    if (event.key.startsWith("ArrowRight")) {
-        fetchData();
-    }
-})
-document.addEventListener("keydown", event => {
-    if (event.key.startsWith("ArrowLeft")) {
-        clearGuess();
-    }
-})
-function clearGuess() {
-    document.getElementById("guess").value = "";
 }
 
 /** get the user guess and compare with the results from the data */
