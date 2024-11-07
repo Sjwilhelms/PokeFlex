@@ -2,9 +2,9 @@
 
 [Am I responsive](assets/images/Screenshot%202024-11-03%20153805.png)
 
-[](assets/images/Screenshot%202024-11-07%20103907.png)
+[colour palette](assets/images/Screenshot%202024-11-07%20103907.png)
 
-[](assets/images/Screenshot%202024-11-07%20104411.png)
+[full screen](assets/images/Screenshot%202024-11-07%20104411.png)
 
 ## Version 1 MVP
 
