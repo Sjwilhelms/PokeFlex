@@ -1,6 +1,4 @@
 
-
-let randomIndex = Math.floor(Math.random() * 150) + 1;
 let wrongAnswer;
 let nameData = [];
 let wrongAnswersList = [];
@@ -12,7 +10,7 @@ let score = 0;
 let timeLeft = 60;
 let timerInterval;
 
-fetchWrong();
+
 
 /** start the game, close the introduction and fetch a pokemon */
 function start() {
@@ -63,33 +61,6 @@ function end() {
         <button id="playAgain" class="btn" onclick="start()">Let's Go!</button>
     `}
 }
-
-/** function to get the incorrect answers from pokeApi */
-
-async function fetchWrong() {
-    try {
-        // APi call to fetch 150 pokemon for wrong answers
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=150&offset=0`);
-
-        if (!response.ok) {
-            throw new Error("Failed to fetch wrong answers");
-        }
-        nameData = await response.json();
-        for (let i = 0; i < 3; i++) {
-            
-            const randomName = Math.floor(Math.random() * nameData.results.length);
-            wrongAnswersList.push(nameData.results[randomName].name);
-        }
-        console.log(wrongAnswersList);
-    }
-    catch (error) {
-        console.error(error);
-    }
-}
-
-/** function to put three wrong answers from nameData into a list */
-
-
 
 /** function to get the pokemon data from pokeAPI. Use a random number to generate an index for the apiCall to load a random pokemon */
 
