@@ -36,6 +36,8 @@ There is no credits or link to GitHub or readMe for code accountability
 
 There is no victory conditions, no reward, and no feedback (There is poke but there is no flex)  
 
+Tone down the lurid colors  
+
 ### Version 1.1
 
 Add a start screen and ending credits
