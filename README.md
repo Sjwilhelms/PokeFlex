@@ -50,15 +50,15 @@ Add more complete keyboard controls
 
 Start screen  
 
-[v1.1 start screen](assets/images/Screenshot%202024-11-07%20124229.png)
+![v1.1 start screen](assets/images/Screenshot%202024-11-07%20124229.png)
 
 Game screen  
 
-[v1.1 game screen](assets/images/Screenshot%202024-11-07%20124241.png)
+![v1.1 game screen](assets/images/Screenshot%202024-11-07%20124241.png)
 
 End credits  
 
-[v1.1 end credits](assets/images/Screenshot%202024-11-07%20124405.png)
+![v1.1 end credits](assets/images/Screenshot%202024-11-07%20124405.png)
 
 ### Version 2 WIP
 
