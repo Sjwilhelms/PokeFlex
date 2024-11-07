@@ -1,5 +1,7 @@
 # PokeFlex
 
+[gameboycolor](assets/images/gameBoyColor.png)
+
 [Am I responsive](assets/images/Screenshot%202024-11-03%20153805.png)
 
 [colour palette](assets/images/Screenshot%202024-11-07%20103907.png)
