@@ -1,13 +1,6 @@
 # PokeFlex
 
-
-![gameboycolor](assets/images/gameBoyColor.png)
-
-![Am I responsive](assets/images/Screenshot%202024-11-03%20153805.png)
-
-![colour palette](assets/images/Screenshot%202024-11-07%20103907.png)
-
-![full screen](assets/images/Screenshot%202024-11-07%20104411.png)
+![am I response?](assets/images/Screenshot%202024-11-07%20104411.png)
 
 ## Version 1 MVP
 
@@ -23,8 +16,9 @@ If incorrect the user gets a clue and another attempt
 
 There are keyboard controls, cursor autofocus, a score count, and an attempt count  
 
-Correct answer logs to the console for testing purposes and as a developer easter egg  
+Correct answer logs to the console for testing purposes and as a developer easter egg 
 
+![v1 full screen](assets/images/Screenshot%202024-11-07%20103907.png)
 
 ### Version 1 User Feedback
 
@@ -42,23 +36,45 @@ There is no credits or link to GitHub or readMe for code accountability
 
 There is no victory conditions, no reward, and no feedback (There is poke but there is no flex)  
 
+### Version 1.1
+
+Add a start screen and ending credits
+
+Added a time limit
+
+Add a reward for completion
+
+Add more complete keyboard controls
+
+Start screen  
+
+[v1.1 start screen](assets/images/Screenshot%202024-11-07%20124229.png)
+
+Game screen  
+
+[v1.1 game screen](assets/images/Screenshot%202024-11-07%20124241.png)
+
+End credits  
+
+[v1.1 end credits](assets/images/Screenshot%202024-11-07%20124405.png)
 
 ### Version 2 WIP
 
-Multiple choice format to resolve user input and answer format problemsadd context and reduce overall visual clutter  
-
-MOBILE STYLING, MOBILE FIRST  
-
-Develop an end game, using time and final score. A certain score unlocks a poke reward   
-
-Credits section upon the end of the game  
-
+Multiple choice format to resolve user input and answer format problemsadd context and reduce overall visual clutter
 
 ## User stories - Must have(TBC)
 
 ## Credits
 
+Styled like a game boy color:
+
+https://handheldlegend.com/products/game-boy-color-ips-lcd-q5-hispeedido
+
+![gameboycolor](assets/images/gameBoyColor.png)
+
 [coolers.co](https://coolors.co/99ee95-0b1157)
+
+![colour palette](assets/images/Screenshot%202024-11-03%20153805.png)
 
 Inspired by the Bro Code's tutorial on asynchronous fetch
 
@@ -68,10 +84,6 @@ Use the Pokemon Api to fetch an image of a random Pokemon
 
 https://pokeapi.co/
 
-Styled like a game boy color:
-
-https://handheldlegend.com/products/game-boy-color-ips-lcd-q5-hispeedido
-
-When victory conditions are met in v2 the user is rewarded with a link to the pokerap
+When victory conditions are met the user is rewarded with a link to the pokerap
 
 https://www.youtube.com/watch?v=xMk8wuw7nek
