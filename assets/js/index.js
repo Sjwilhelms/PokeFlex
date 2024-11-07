@@ -1,23 +1,4 @@
-// add logic for keyboard controls
 
-document.addEventListener("keydown", event => {
-    if (event.key.startsWith("Enter")) {
-        getGuess();
-    }
-})
-document.addEventListener("keydown", event => {
-    if (event.key.startsWith("ArrowRight")) {
-        fetchData();
-    }
-})
-document.addEventListener("keydown", event => {
-    if (event.key.startsWith("ArrowLeft")) {
-        clearGuess();
-    }
-})
-function clearGuess() {
-    document.getElementById("guess").value = "";
-}
 
 let randomIndex = Math.floor(Math.random() * 150) + 1;
 let wrongAnswer;
@@ -95,6 +76,7 @@ async function fetchWrong() {
         }
         nameData = await response.json();
         for (let i = 0; i < 3; i++) {
+            
             const randomName = Math.floor(Math.random() * nameData.results.length);
             wrongAnswersList.push(nameData.results[randomName].name);
         }
@@ -104,6 +86,10 @@ async function fetchWrong() {
         console.error(error);
     }
 }
+
+/** function to put three wrong answers from nameData into a list */
+
+
 
 /** function to get the pokemon data from pokeAPI. Use a random number to generate an index for the apiCall to load a random pokemon */
 
@@ -121,7 +107,7 @@ async function fetchData() {
 
         // generate a random number to select the pokemon
 
-
+        let randomIndex = Math.floor(Math.random() * 150) + 1;
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomIndex}`);
 
         // get the data
@@ -147,6 +133,27 @@ async function fetchData() {
     catch (error) {
         console.error(error);
     }
+}
+
+// add logic for keyboard controls
+
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("Enter")) {
+        getGuess();
+    }
+})
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("ArrowRight")) {
+        fetchData();
+    }
+})
+document.addEventListener("keydown", event => {
+    if (event.key.startsWith("ArrowLeft")) {
+        clearGuess();
+    }
+})
+function clearGuess() {
+    document.getElementById("guess").value = "";
 }
 
 /** get the user guess and compare with the results from the data */
