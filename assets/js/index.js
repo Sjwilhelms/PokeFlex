@@ -1,10 +1,7 @@
-
-let wrongAnswer;
-let nameData = [];
-let wrongAnswersList = [];
 const gameIntro = document.getElementById("gameIntro");
 const gameContainer = document.getElementById("gameContainer");
 const timeDisplay = document.getElementById("timeDisplay");
+let usedIndex = [];
 let playing = false;
 let score = 0;
 let timeLeft = 60;
@@ -76,11 +73,18 @@ async function fetchData() {
         resultBody.style.display = "none";
         attempts = 0;
 
-        // generate a random number to select the pokemon
-
-        let randomIndex = Math.floor(Math.random() * 150) + 1;
+        // generate a random number to select the pokemon, store each number in an array and do not reuse
+        
+        let randomIndex;
+        do{
+            randomIndex = Math.floor(Math.random() * 150) + 1;
+        }
+        while (usedIndex.includes(randomIndex));
+        usedIndex.push(randomIndex);
+        console.log(usedIndex);
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomIndex}`);
-
+        console.log(randomIndex);
+        
         // get the data
 
         if (!response.ok) {
@@ -149,7 +153,7 @@ function getGuess() {
         document.getElementById("guess").value = "";
         document.getElementById("submit").style.display = "none";
         document.getElementById("guess").focus();
-        fetchData()
+        fetchData();
 
     }
     else {
