@@ -35,18 +35,8 @@ img{
     padding: 10px;
 }
 #guess{
-    width: 515px;
+    width: 60vw;
+    width: 60%;
     text-align: center;
     margin: 10px;
 }
-/* @media only screen and (max-width: 600px) {
-    .gameContainer{
-        margin-top: 50px;
-    }
-    #guess{
-        width: 250px;
-    }
-    .btn{
-        width: 250px;
-    }
-  } */

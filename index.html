@@ -37,27 +37,27 @@
         <div class="spriteArea ">
             <img src="" alt="Pokemon Sprite - Rear View" id="pokemonSprite" style="display: none">
         </div>
-        <div class="container-fluid"></div>
-        <div class="col-12"></div>
-        <!-- user inputs and submits guess. Try a new pokemon option -->
-        <div class="form">
-            <input type="text" id="guess" placeholder="Type your guess now!" autofocus autocomplete="off">
-            <div class="gameControls">
-                <button type="submit" id="submit" class="btn" onclick="getGuess()">Guess the pokemon!
-                    (Enter)</button>
-                <button onclick="fetchData()" class="btn">Try a new pokemon (>)</button>
-                <button onclick="clearGuess()" class="btn">Clear the input (<)< /button>
+        <div class="container-fluid">
+            <div class="col-12">
+                <!-- user inputs and submits guess. Try a new pokemon option -->
+                <div class="form">
+                    <input type="text" id="guess" placeholder="Type your guess now!" autofocus autocomplete="off">
+                    <div class="gameControls">
+                        <button type="submit" id="submit" class="btn" onclick="getGuess()">Guess the pokemon!
+                            (Enter)</button>
+                        <button onclick="fetchData()" class="btn">Try a new pokemon (>)</button>
+                        <button onclick="clearGuess()" class="btn">Clear the input (<)< /button>
+                    </div>
+                </div>
+                <!-- displat the results and score -->
+                <div class="resultArea">
+                    <h2 id="resultHeader" style="display: none">YAY! You were right!</h2>
+                    <p id="resultBody" style="display: none">The correct answer was Pikachu!</p>
+                    <p id="scoreboard" style="display: none">You've got 0 answers correct!</p>
+                    <p id="timeDisplay" style="display: none">You've got 60 seconds left!</p>
+                </div>
             </div>
         </div>
-        <!-- displat the results and score -->
-        <div class="resultArea">
-            <h2 id="resultHeader" style="display: none">YAY! You were right!</h2>
-            <p id="resultBody" style="display: none">The correct answer was Pikachu!</p>
-            <p id="scoreboard" style="display: none">You've got 0 answers correct!</p>
-            <p id="timeDisplay" style="display: none">You've got 60 seconds left!</p>
-        </div>
-    </div>
-    </div>
     </div>
 
     <!-- game over/credits -->
